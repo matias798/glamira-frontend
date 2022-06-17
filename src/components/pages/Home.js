@@ -11,7 +11,7 @@ const Home = () => {
       // axios with cross origin enabled
       const res = await axios({
         method: "get",
-        url: "https://localhost:3001/first-10-products",
+        url: "https://localhost:3001/first-9-products",
         crossdomain: true,
         headers: {
           "Content-Type": "application/json",
