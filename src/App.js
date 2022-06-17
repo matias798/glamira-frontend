@@ -4,12 +4,12 @@ import './App.css';
 
 // Components
 import Navbar from "./components/sections/Navbar";
-
-
+import Footer from "./components/sections/Footer";
 function App() {
   return (
     <div className="App">
       <Navbar />
+      <Footer />
     </div>
   );
 }
