@@ -2,6 +2,7 @@ import HomeCarousel from "../sections/Carousel";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import { useState, useEffect,useCallback } from "react";
+import StayInTouch from "./../sections/StayInTouch.js";
 const Home = () => {
   // Get camisas from API
   let [products, setProducts] = useState([]);
@@ -74,6 +75,8 @@ const Home = () => {
             </div>
           ))}
         </div>
+
+        <StayInTouch />
       </div>
     </>
   );
