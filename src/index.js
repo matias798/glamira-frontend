@@ -4,7 +4,7 @@ import App from "./App";
 import "bootstrap/dist/js/bootstrap.bundle.min";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { CartProvider } from "react-use-cart";
-import "./App.css";
+import "./assets/css/App.css";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

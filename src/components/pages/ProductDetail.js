@@ -32,14 +32,16 @@ const ProductDetail = (props) => {
             }}
           />
         </div>
-        <div className="col-md-6">
+        <div className="col-md-6 text-start">
           <h3>{product.title}</h3>
-          <p>{product.description}</p>
+          <h3 style={{ color: "GrayText", fontWeight: "light" }}>
+            ${product.price}
+          </h3>
+          <p className="my-5">{product.description}</p>
 
-          <div className="d-flex justify-content-evenly mt-5">
-            <h3>${product.price}</h3>
+          <div className="d-flex justify-content-start mt-5">
             <button
-              className="btn btn-primary "
+              className="btn btn-primary rounded "
               onClick={() => {
                 addToCartHandler(product);
               }}
