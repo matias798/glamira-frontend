@@ -24,6 +24,14 @@ const CartItem = ({ product }) => {
       <div className="cart-item">
         <div className="row">
           <div className="col-md-3">
+          <button
+              className="btn btn-sm round-circle m-5"
+              onClick={() => {
+                removeHandler(product);
+              }}
+            >
+              <AiOutlineDelete  size={15}/>
+            </button>
             <img
               src={product.image}
               alt={product.name}
@@ -35,11 +43,11 @@ const CartItem = ({ product }) => {
               }}
             />
           </div>
-          <div className="col-md-6">
+          <div className="col-md-6 pt-2">
             <h5>{product.title}</h5>
             <p>${product.price}</p>
           </div>
-          <div className="col-md-3">
+          <div className="col-md-3 pt-2">
             <button
               onClick={() =>
                 updateItemQuantity(product.id, product.quantity - 1)
@@ -58,18 +66,7 @@ const CartItem = ({ product }) => {
             >
               +
             </button>
-            <button
-              className="btn btn-sm round-circle"
-              onClick={() => {
-                removeHandler(product);
-              }}
-              style={{
-              
-                color: "red",
-               }}
-            >
-              <AiOutlineDelete  size={15}/>
-            </button>
+            
           </div>
         </div>
       </div>

@@ -40,8 +40,7 @@ const Cart = () => {
       </div>
     );
   return (
-    <div className="mt-5">
-      <h1>Shopping Cart</h1>
+    <div className="m-5">
       {items.map((product) => (
         <CartItem key={product.id} product={product} />
       ))}
@@ -56,7 +55,7 @@ const Cart = () => {
             BuyHandler();
           }}
         >
-          Pay Now
+          continue to payment
         </button>
       </div>
     </div>
