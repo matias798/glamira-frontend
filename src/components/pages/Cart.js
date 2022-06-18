@@ -1,29 +1,14 @@
 import CartItem from "./../sections/CartItem";
-import Swal from "sweetalert2";
-import axios from "axios";
 import { Link } from "react-router-dom";
 import { useCart } from "react-use-cart";
+import { useNavigate } from "react-router-dom";
 
 const Cart = () => {
   const { isEmpty, items, cartTotal } = useCart();
+  const navigate = useNavigate();
 
-  const BuyHandler = () => {
-    try {
-      axios
-        .post("https://localhost:3001/payment", {
-          total: `${cartTotal}`,
-        })
-        .then((res) => {
-          window.location.href = res.data.data.url;
-        });
-    } catch (error) {
-      Swal.fire({
-        title: "Error",
-        text: "Something went wrong",
-        icon: "error",
-        confirmButtonText: "OK",
-      });
-    }
+  const continueHandler = () => {
+    navigate("/payment");
   };
 
   if (isEmpty)
@@ -52,7 +37,7 @@ const Cart = () => {
           variant="contained"
           className="btn btn-outline-primary"
           onClick={() => {
-            BuyHandler();
+            continueHandler();
           }}
         >
           continue to payment

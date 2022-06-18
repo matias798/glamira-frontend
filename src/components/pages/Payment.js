@@ -1,13 +1,37 @@
+import { useCart } from "react-use-cart";
 import { useState } from "react";
+import axios from "axios";
+import Swal from "sweetalert2";
 
 const Payment = () => {
+  const { cartTotal } = useCart();
+
   const [dni, setDni] = useState();
   const [name, setName] = useState();
   const [email, setEmail] = useState();
 
   const onSubmitHandler = (e) => {
     e.preventDefault();
-    console.log(dni, name, email);
+
+    try {
+      axios
+        .post("https://localhost:3001/payment", {
+          total: `${cartTotal}`,
+          dni,
+          name,
+          email,
+        })
+        .then((res) => {
+          window.location.href = res.data.data.url;
+        });
+    } catch (error) {
+      Swal.fire({
+        title: "Error",
+        text: "Something went wrong",
+        icon: "error",
+        confirmButtonText: "OK",
+      });
+    }
   };
 
   return (

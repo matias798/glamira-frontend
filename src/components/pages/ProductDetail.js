@@ -31,12 +31,7 @@ const ProductDetail = () => {
         </div>
         <div className="col-md-6 text-start">
           <h3 className="ProdDetTitle">{product.title}</h3>
-          <h3
-            className="price"
-            style={{ color: "GrayText", fontWeight: "light" }}
-          >
-            ${product.price}
-          </h3>
+          <legend> ${product.price}</legend>
           <p className="my-5">{product.description}</p>
           {console.log(product)}
           <div className="d-flex justify-content-start mt-5">
