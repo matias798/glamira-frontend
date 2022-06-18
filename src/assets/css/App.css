@@ -1,3 +1,9 @@
+/* import downloaded font */
+@font-face {
+  font-family: didot;
+  src: url('./../fonts/Didot Regular.ttf');
+}
+
 body {
   margin: 0;
   padding: 0;
@@ -8,7 +14,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-
+/* Shopping cart */
 .shoppingCartNav {
   border-radius: 5px;
   color: aliceblue !important;
@@ -27,4 +33,18 @@ body {
 
 .shoppingCartNav:hover {
   background-color: #201c1c !important;
+}
+
+/* /Shopping cart */
+
+/* product detail */
+
+.ProdDetTitle {
+  margin-bottom: 10px;
+  font-family: didot;
+}
+
+.price {
+  font-size: 1.5rem;
+  font-weight: '400';
 }
