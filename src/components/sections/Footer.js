@@ -122,7 +122,7 @@ const Footer = () => {
               />
             </figure>
             {/* <img src={Logo} alt="FooterLogo" width="82" height="25" /> */}
-            <p className="footer-copyright">
+            <p className="footer-copyright mb-0">
               Copyright © 2022 Glamira.
             </p>
           </div>
