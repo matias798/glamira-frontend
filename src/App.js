@@ -11,8 +11,8 @@ import Payment from "./components/pages/Payment";
 function App() {
   return (
     <div className="App">
-      <Navbar />
       <Router>
+      <Navbar />
         <Routes>
           <Route exact path="/" element={<Home />} />
           <Route path="/cart" element={<ShopingCart />} />
