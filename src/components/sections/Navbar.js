@@ -3,7 +3,7 @@ import { NavLink } from "react-router-dom";
 
 const Navbar = () => {
   return (
-    <nav className="navbar navbar-expand-lg navbar-dark bg-primary">
+    <nav className="navbar navbar-expand-lg navbar-light bg-light">
       <div className="container-fluid px-5">
         <NavLink className="navbar-brand" to="/">
           Glamira
@@ -12,24 +12,24 @@ const Navbar = () => {
         <div className="collapse navbar-collapse" id="navbarColor01">
           <ul className="navbar-nav me-auto">
             <li className="nav-item">
-              <NavLink className="nav-link" to="/Women">
+              <a className="nav-link" href="/contact-us">
+                Contact us
+              </a>
+            </li>
+            <li className="nav-item">
+              <a className="nav-link" href="/products/women's clothing">
                 Women
-              </NavLink>
+              </a>
             </li>
             <li className="nav-item">
-              <NavLink className="nav-link" to="/Men">
+              <a className="nav-link" href="/products/men's clothing">
                 Men
-              </NavLink>
+              </a>
             </li>
             <li className="nav-item">
-              <NavLink className="nav-link" to="/jewelry">
+              <a className="nav-link" href="/products/jewelery">
                 jewelry
-              </NavLink>
-            </li>
-            <li className="nav-item dropdown">
-              <NavLink className="nav-link" to="/jewelry">
-                Unisex
-              </NavLink>
+              </a>
             </li>
           </ul>
           <div className="d-flex">
