@@ -1,16 +1,20 @@
-import { useState, useEffect,useCallback } from "react";
+import { useState, useEffect, useCallback } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 
 // components
 import HomeCarousel from "../sections/Carousel";
 import StayInTouch from "./../sections/StayInTouch.js";
+import ProductsSlider from "../sections/ProductsSlider";
+import Images from "../sections/Image";
+import AboutUs from "../sections/AboutUs";
 
 const Home = () => {
-  // Get camisas from API
+  window.scrollTo(0, 0); //always go to top of page
+  
   let [products, setProducts] = useState([]);
 
-  const getproducts = useCallback(async() => {
+  const getproducts = useCallback(async () => {
     try {
       // axios with cross origin enabled
       const res = await axios({
@@ -31,56 +35,23 @@ const Home = () => {
     } catch (err) {
       console.log(err);
     }
-  }, []); //logResult is memoized now.
-  useEffect(()=> {
+  }, []); //logResult is memorized now.
+
+  useEffect(() => {
     getproducts();
-  },[getproducts]);
+  }, [getproducts]);
 
   const navigate = useNavigate();
-  
+
   return (
     <>
       <HomeCarousel />
+      <ProductsSlider products={products} navigate={navigate} ProductSliderTitle='New Products' />
+      <Images />
+      <ProductsSlider products={products.reverse()} navigate={navigate} ProductSliderTitle='New Products' />
+      <AboutUs/>
 
-      {/* map all camisas */}
-      <div className="container mt-5">
-        {/* title */}
-        <h2 className="text-center m-4">Featured Products</h2>
-        <div className="row">
-          {products.map((product) => (
-            <div
-              onClick={() => {
-                navigate(`/product/${product.id}`, { state: { product } });
-              }}
-              className="col-md-4"
-              key={product.id}
-              style={{ cursor: "pointer" }}
-            >
-              <div
-                className="card m-5 shadow-sm round p-5"
-                style={{
-                  height: "400px",
-                  width: "100%",
-                }}
-              >
-                <img
-                  className="card-img-top"
-                  src={product.image}
-                  alt={product.title}
-                  style={{ height: "200px" }}
-                />
-                <div className="card-body p-4">
-                  <div className="d-flex justify-content-between align-items-center">
-                    <p className="card-title">{product.title}</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
-
-        <StayInTouch />
-      </div>
+      <StayInTouch />
     </>
   );
 };
