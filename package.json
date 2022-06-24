@@ -16,6 +16,7 @@
     "react-scripts": "5.0.1",
     "react-use-cart": "^1.13.0",
     "sweetalert2": "^11.4.17",
+    "swiper": "^8.2.4",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
