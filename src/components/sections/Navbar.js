@@ -1,4 +1,4 @@
-import { FaShoppingCart } from "react-icons/fa";
+import { BsBag } from "react-icons/bs";
 import { NavLink } from "react-router-dom";
 
 const Navbar = () => {
@@ -34,7 +34,7 @@ const Navbar = () => {
           </ul>
           <div className="d-flex">
             <NavLink className="dropdown-item shoppingCartNav" to="/cart">
-              <FaShoppingCart size={25} />
+              <BsBag size={25} />
             </NavLink>
           </div>
         </div>
