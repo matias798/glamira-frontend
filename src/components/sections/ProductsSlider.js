@@ -5,7 +5,7 @@ import { Autoplay, Pagination, Navigation } from "swiper";
 
 const ProductsSlider = ({ products, navigate,ProductSliderTitle }) => {
   return (
-    <div className="px-5">
+    <div className="px-5 dontShowOnMobile">
       <h2 className="text-start mx-5 my-5">{ProductSliderTitle} </h2>
       <Swiper
         modules={[Autoplay, Pagination, Navigation]}

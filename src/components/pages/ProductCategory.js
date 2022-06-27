@@ -72,7 +72,7 @@ const ProductCategory = () => {
         <div className="d-flex justify-content-start flex-wrap mt-5">
           {filteredProducts.map((product) => (
             <div
-              className="card rounded  m-2"
+              className="card rounded ProdCategoryCard  m-2"
               style={{
                 height: "400px",
                 width: "30%",

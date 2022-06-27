@@ -15,7 +15,6 @@ const ProductDetail = () => {
   let products = useLocation().state.products;
 
   const addToCartHandler = (product) => {
-
     addItem({...product,id:product._id});
     console.log(product,1);
     navigate("/cart");
@@ -37,11 +36,11 @@ const ProductDetail = () => {
           />
         </div>
         <div className="col-md-6 text-start">
-          <h3 className="ProdDetTitle">{product.title}</h3>
+          <h3 className="ProdDetTitle ">{product.title}</h3>
           <legend> ${product.price}</legend>
-          <p className="my-5">{product.description}</p>
+          <p className="my-5 ">{product.description}</p>
 
-          <div className="down-content">
+          <div className="down-content dontShowOnMobile">
             <div className="categories">
               <h6>
                 Category:{" "}

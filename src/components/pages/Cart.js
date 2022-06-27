@@ -40,7 +40,7 @@ const Cart = () => {
             continueHandler();
           }}
         >
-          continue to payment
+          continue 
         </button>
       </div>
     </div>

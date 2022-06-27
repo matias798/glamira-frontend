@@ -113,3 +113,40 @@ hr {
 /* max text inside card */
 
 /* /Product slider */
+
+/* mobile */
+
+@media screen and (max-width: 600px) {
+  .dontShowOnMobile {
+    display: none !important;
+  }
+
+  .CarrouselContainer {
+    height: auto;
+  }
+
+  .CarrouselImage {
+    height: auto;
+    width: auto;
+    width: 100vw;
+    max-height: 500px;
+  }
+
+  .ProdDetTitle {
+    margin-top: 2em;
+  }
+
+
+  .ProdCategoryCard {
+    width: 100vw !important;
+  }
+
+  .centerOnMobile {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .centerTextOnMobile {
+    text-align: center;
+  }
+}

@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 const Image = () => {
   return (
-    <div className="my-5 p-5">
+    <div className="my-5 p-5 dontShowOnMobile">
       <h3 className="text-start mx-5 ">Categories</h3>
 
       <div className="d-flex justify-content-center my-5 p-5 mt-2">
