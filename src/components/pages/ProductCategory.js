@@ -15,7 +15,7 @@ const ProductCategory = () => {
     try {
 
       axios
-        .get(`https://localhost:3001${window.location.pathname}`)
+        .get(`${process.env.REACT_APP_SERVER_URL}${window.location.pathname}`)
         .then((res) => {
           setProducts(res.data);
           setfilteredProducts(res.data);

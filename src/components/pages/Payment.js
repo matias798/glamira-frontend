@@ -15,7 +15,7 @@ const Payment = () => {
 
     try {
       axios
-        .post("https://localhost:3001/payment", {
+        .post(`${process.env.REACT_APP_SERVER_URL}/payment`, {
           total: `${cartTotal}`,
           dni,
           name,
