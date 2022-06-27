@@ -29,7 +29,7 @@ const ProductsSlider = ({ products, navigate,ProductSliderTitle }) => {
               });
             }}
             className="d-flex justify-content-center"
-            key={product.id}
+            key={Math.random()}
             style={{ cursor: "pointer" }}
           >
             <div
