@@ -4,15 +4,15 @@ import {BsBrush} from 'react-icons/bs';
 
 const AboutUs = () => {
   return (
-    <div class="container">
-      <div class="main-title">
+    <div className="container">
+      <div className="main-title">
         <h2>WHY CHOOSE US?</h2>
         <hr />
       </div>
-      <div class="services-home-page pt-5">
-        <div class="row">
-          <div class="col-md-4">
-            <div class="services-icon">
+      <div className="services-home-page pt-5">
+        <div className="row">
+          <div className="col-md-4">
+            <div className="services-icon">
               <p ><TbTools size={40}  /></p>
               <hr />
               <br/>
@@ -25,9 +25,9 @@ const AboutUs = () => {
               or avoids pleasure itself, because procure him.
             </p>
           </div>
-          <div class="col-md-4">
-            <div class="services-icon">
-              <p class="icon-globe"><IoMdGlobe size={40}/></p>
+          <div className="col-md-4">
+            <div className="services-icon">
+              <p className="icon-globe"><IoMdGlobe size={40}/></p>
               <hr />
             </div>
             <hr />
@@ -40,9 +40,9 @@ const AboutUs = () => {
               or avoids pleasure itself, because procure him.
             </p>
           </div>
-          <div class="col-md-4">
-            <div class="services-icon">
-              <p class="icon-paintbrush"><BsBrush size={40}/> </p>
+          <div className="col-md-4">
+            <div className="services-icon">
+              <p className="icon-paintbrush"><BsBrush size={40}/> </p>
               <hr />
               <br/>
               <br/>

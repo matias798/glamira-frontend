@@ -19,7 +19,7 @@ const Image = () => {
               borderRadius: "10px",
             }}
           />
-          <div class="Left">
+          <div className="Left">
             <h3 className="m-0 p-0" style={{ color: "#ffffff" }}>
               Jewellery
             </h3>
@@ -40,7 +40,7 @@ const Image = () => {
                 borderRadius: "10px",
               }}
             />
-            <div class="Center">
+            <div className="Center">
               <h3 className="m-0 p-0" style={{ color: "#ffffff" }}>
                 All
               </h3>
@@ -61,7 +61,7 @@ const Image = () => {
                   borderRadius: "10px",
                 }}
               />
-              <div class="Left">
+              <div className="Left">
                 <h3 className="m-0 p-0" style={{ color: "#ffffff" }}>
                   Men
                 </h3>
@@ -72,7 +72,6 @@ const Image = () => {
             <Link
               to="/products/women's clothing"
               className="containerimg"
-              containerimg
               style={{ marginLeft: "20px" }}
             >
               {" "}
@@ -86,7 +85,7 @@ const Image = () => {
                   borderRadius: "10px",
                 }}
               />
-              <div class="Left" style={{ left: "30%" }}>
+              <div className="Left" style={{ left: "30%" }}>
                 <h3 className="m-0 p-0" style={{ color: "#ffffff" }}>
                   Women
                 </h3>
