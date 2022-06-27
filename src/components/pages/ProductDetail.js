@@ -15,7 +15,9 @@ const ProductDetail = () => {
   let products = useLocation().state.products;
 
   const addToCartHandler = (product) => {
-    addItem(product);
+
+    addItem({...product,id:product._id});
+    console.log(product,1);
     navigate("/cart");
   };
 
@@ -39,8 +41,8 @@ const ProductDetail = () => {
           <legend> ${product.price}</legend>
           <p className="my-5">{product.description}</p>
 
-          <div class="down-content">
-            <div class="categories">
+          <div className="down-content">
+            <div className="categories">
               <h6>
                 Category:{" "}
                 <span  

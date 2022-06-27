@@ -80,7 +80,7 @@ const ProductCategory = () => {
               }}
               key={product.id}
               onClick={() => {
-                navigate(`/product/${product.id}`, {
+                navigate(`/product/detail`, {
                   state: { product, products },
                 });
               }}

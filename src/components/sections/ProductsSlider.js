@@ -24,7 +24,7 @@ const ProductsSlider = ({ products, navigate,ProductSliderTitle }) => {
         {products.map((product) => (
           <SwiperSlide
             onClick={() => {
-              navigate(`/product/${product.id}`, {
+              navigate(`/product/detail`, {
                 state: { product, products },
               });
             }}
