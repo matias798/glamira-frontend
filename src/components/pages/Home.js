@@ -8,6 +8,7 @@ import StayInTouch from "./../sections/StayInTouch.js";
 import ProductsSlider from "../sections/ProductsSlider";
 import Images from "../sections/Image";
 import AboutUs from "../sections/AboutUs";
+import Video from "../sections/Video";
 
 const Home = () => {
   window.scrollTo(0, 0); //always go to top of page
@@ -44,13 +45,14 @@ const Home = () => {
         ProductSliderTitle="New Products"
       />
       <Images />
+      <Video />
       <ProductsSlider
+        className="dontShowOnMobile"
         products={products.reverse()}
         navigate={navigate}
-        ProductSliderTitle="New Products"
+        ProductSliderTitle="Collections"
       />
       <AboutUs />
-
       <StayInTouch />
     </>
   );
