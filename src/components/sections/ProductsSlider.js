@@ -3,10 +3,22 @@ import "swiper/css";
 
 import { Autoplay, Pagination, Navigation } from "swiper";
 
-const ProductsSlider = ({ products, navigate,ProductSliderTitle }) => {
+const isMobile = () => {
+  return window.innerWidth < 768;
+};
+
+const ProductsSlider = ({ products, navigate, ProductSliderTitle }) => {
   return (
-    <div className="px-5 dontShowOnMobile">
-      <h2 className="text-start mx-5 my-5">{ProductSliderTitle} </h2>
+    <div
+      className={
+        isMobile() === true
+          ? "mx-4 products-slider-container "
+          : "container products-slider-container-desktop"
+      }
+    >
+      <h2 className="text-start my-5 centerOnMobile centerTextOnMobile">
+        {ProductSliderTitle}{" "}
+      </h2>
       <Swiper
         modules={[Autoplay, Pagination, Navigation]}
         autoplay={{
@@ -18,8 +30,8 @@ const ProductsSlider = ({ products, navigate,ProductSliderTitle }) => {
         }}
         navigation={true}
         spaceBetween={50}
-        slidesPerView={4}
-        className="swiper-container pb-5 m-5"
+        slidesPerView={isMobile() ? 1 : 4}
+        className="swiper-container pb-5 "
       >
         {products.map((product) => (
           <SwiperSlide
@@ -50,8 +62,8 @@ const ProductsSlider = ({ products, navigate,ProductSliderTitle }) => {
                   style={{ height: "100%", width: "100%" }}
                 />
               </div>
-              <div className="card-body mt-4">
-                <p className="card-title">{product.title}</p>
+              <div className="card-body mt-4 centerTextOnMobile">
+                <p className="card-title centerTextOnMobile">{product.title}</p>
               </div>
             </div>
           </SwiperSlide>
