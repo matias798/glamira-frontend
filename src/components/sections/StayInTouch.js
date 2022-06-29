@@ -10,21 +10,21 @@ const subscribeHandler = () => {
   });}
 
   return (
-    <div className="container mt-5 pt-5">
-      <div className="my-5">
+    <div className="container mt-2 ">
+      <div className="my-5 ">
         {/* title */}
-        <div className="title">
+        <div className="title centerTextOnMobile">
           <h4>Suscribe to our newsleter</h4>
 
           <div className="form-group">
             <input
               type="text"
-              className="form-control m-4"
+              className="form-control my-4"
               placeholder="Enter your name"
             />
             <input
               type="email"
-              className="form-control m-4"
+              className="form-control my-4"
               placeholder="Enter your email"
             />
             <div className="d-flex justify-content-end">
