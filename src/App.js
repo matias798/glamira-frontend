@@ -13,6 +13,7 @@ import ProductCategory from "./components/pages/ProductCategory";
 import Error from "./components/pages/Error";
 import Spinner from "./components/sections/Spinner";
 import ContactUs from "./components/pages/ContactUs";
+import Orders from "./components/pages/Orders";
 
 function App() {
   const [isLoading, setIsLoading] = useState(false);
@@ -40,6 +41,7 @@ function App() {
           <Route path="/payment" element={<Payment />} />
           <Route path="/product/detail" element={<ProductDetail />} />
           <Route path="/products/:category" element={<ProductCategory />} />
+          <Route path="/user/orders" element={<Orders />} />
           <Route path="*" element={<Error />} />
         </Routes>
       </Router>

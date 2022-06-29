@@ -1,4 +1,8 @@
+// import react-icons
 import { BsBag } from "react-icons/bs";
+import { AiOutlineUser } from "react-icons/ai";
+
+// import react bootstrap 
 import { Navbar, Nav, Container } from "react-bootstrap";
 
 const GlamiraNav = () => {
@@ -15,7 +19,10 @@ const GlamiraNav = () => {
           </Nav>
           <div className="d-flex  centerTextOnMobile">
           <Nav.Link className="dropdown-item shoppingCartNav centerOnMobile centerTextOnMobile" href="/products/jewelery">
-        {window.screen.width > 768 ?  <BsBag size={25} /> : 'Cart'}
+        {window.screen.width > 768 ?  <BsBag className="me-4" size={25} /> : 'Cart'}
+      </Nav.Link>
+      <Nav.Link className="dropdown-item shoppingCartNav centerOnMobile centerTextOnMobile" href="/user/orders">
+        {window.screen.width > 768 ?  <AiOutlineUser size={25} /> : 'Cart'}
       </Nav.Link>
     </div>
         </Navbar.Collapse>
