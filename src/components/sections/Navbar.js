@@ -1,46 +1,27 @@
 import { BsBag } from "react-icons/bs";
-import { NavLink } from "react-router-dom";
+import { Navbar, Nav, Container } from "react-bootstrap";
 
-const Navbar = () => {
+const GlamiraNav = () => {
   return (
-    <nav className="navbar navbar-expand-lg navbar-light bg-light">
-      <div className="container-fluid px-5">
-        <NavLink className="navbar-brand" to="/">
-          Glamira
-        </NavLink>
-
-        <div className="collapse navbar-collapse" id="navbarColor01">
-          <ul className="navbar-nav me-auto">
-            <li className="nav-item">
-              <a className="nav-link" href="/contact-us">
-                Contact us
-              </a>
-            </li>
-            <li className="nav-item">
-              <a className="nav-link" href="/products/women's clothing">
-                Women
-              </a>
-            </li>
-            <li className="nav-item">
-              <a className="nav-link" href="/products/men's clothing">
-                Men
-              </a>
-            </li>
-            <li className="nav-item">
-              <a className="nav-link" href="/products/jewelery">
-                jewelry
-              </a>
-            </li>
-          </ul>
-          <div className="d-flex">
-            <NavLink className="dropdown-item shoppingCartNav" to="/cart">
-              <BsBag size={25} />
-            </NavLink>
-          </div>
-        </div>
-      </div>
-    </nav>
+    <Navbar bg="light" expand="lg">
+      <Container>
+        <Navbar.Brand href="/">Glamira</Navbar.Brand>
+        <Navbar.Toggle aria-controls="basic-navbar-nav" />
+        <Navbar.Collapse id="basic-navbar-nav">
+          <Nav className="me-auto">
+            <Nav.Link href="/products/men's clothing" className='centerTextOnMobile' >Men</Nav.Link>
+            <Nav.Link href="/products/women's clothing" className='centerTextOnMobile'>Women</Nav.Link>
+            <Nav.Link href="/products/jewelery" className='centerTextOnMobile'>Jewelry</Nav.Link>
+          </Nav>
+          <div className="d-flex  centerTextOnMobile">
+          <Nav.Link className="dropdown-item shoppingCartNav centerOnMobile centerTextOnMobile" href="/products/jewelery">
+        {window.screen.width > 768 ?  <BsBag size={25} /> : 'Cart'}
+      </Nav.Link>
+    </div>
+        </Navbar.Collapse>
+      </Container>
+    </Navbar>
   );
 };
 
-export default Navbar;
+export default GlamiraNav;
