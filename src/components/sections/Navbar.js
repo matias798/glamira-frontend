@@ -18,11 +18,11 @@ const GlamiraNav = () => {
             <Nav.Link href="/products/jewelery" className='centerTextOnMobile'>Jewelry</Nav.Link>
           </Nav>
           <div className="d-flex  centerTextOnMobile">
-          <Nav.Link className="dropdown-item shoppingCartNav centerOnMobile centerTextOnMobile" href="/products/jewelery">
+          <Nav.Link className="dropdown-item shoppingCartNav centerOnMobile centerTextOnMobile" href="/cart">
         {window.screen.width > 768 ?  <BsBag className="me-4" size={25} /> : 'Cart'}
       </Nav.Link>
-      <Nav.Link className="dropdown-item shoppingCartNav centerOnMobile centerTextOnMobile" href="/user/orders">
-        {window.screen.width > 768 ?  <AiOutlineUser size={25} /> : 'Cart'}
+      <Nav.Link className="dropdown-item shoppingCartNav centerOnMobile centerTextOnMobile" href="/user/profile/orders">
+        {window.screen.width > 768 ?  <AiOutlineUser size={25} /> : 'Orders'}
       </Nav.Link>
     </div>
         </Navbar.Collapse>
