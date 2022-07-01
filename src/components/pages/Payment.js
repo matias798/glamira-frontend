@@ -4,27 +4,74 @@ import axios from "axios";
 import Swal from "sweetalert2";
 
 const Payment = () => {
-  const { cartTotal } = useCart();
+  const { cartTotal, items } = useCart();
 
   const [dni, setDni] = useState();
   const [name, setName] = useState();
   const [email, setEmail] = useState();
 
-  const onSubmitHandler = (e) => {
-    e.preventDefault();
-
+  const onSubmitHandler = async (e) => {
     try {
-      axios
-        .post(`${process.env.REACT_APP_SERVER_URL}/payment`, {
-          total: `${cartTotal}`,
-          dni,
-          name,
+      e.preventDefault();
+
+      // user token
+      let token = localStorage.getItem("token");
+
+      // if user isnt logged in
+      if (token === null) {
+        // create user obj
+        const user = {
           email,
-        })
-        .then((res) => {
-          window.location.href = res.data.data.url;
-        });
-    } catch (error) {
+          userName: name,
+          identification: dni,
+          fakeRegister: true,
+        };
+
+        // Register user
+        let register = await axios.post(
+          `${process.env.REACT_APP_SERVER_URL}/user/register`,
+          user
+        );
+
+        // check if user exist
+        if (register.data === "User already exist") {
+          return Swal.fire({
+            title: "User already exist",
+            text: "Please login with your credentials",
+            icon: "error",
+            confirmButtonText: "OK",
+          });
+        }
+
+        // Store user token
+        token = localStorage.setItem("token", register.data.token);
+      }
+
+      // map items id to send to server
+      let itemsID = await items.map((item) => {
+        return item.id;
+      });
+
+      // Data sent to the server
+      let data = {
+        total: `${cartTotal}`,
+        dni,
+        name,
+        email,
+        itemsID,
+        UserToken: localStorage.getItem("token"),
+      };
+
+      // create purchase order
+      const payment = await axios.post(
+        `${process.env.REACT_APP_SERVER_URL}/payment`,
+        data
+      );
+      console.log(payment.data);
+    } catch (err) {
+      console.log(err);
+
+      // Show error message
       Swal.fire({
         title: "Error",
         text: "Something went wrong",
@@ -43,6 +90,7 @@ const Payment = () => {
           onSubmitHandler(e);
         }}
       >
+        {}
         <fieldset>
           <div className="form-group">
             <label className="form-label mt-4">Name</label>
