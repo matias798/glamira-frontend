@@ -2,7 +2,7 @@
 import axios from "axios";
 import Swal from "sweetalert2";
 import { Form, Button } from "react-bootstrap";
-import { useNavigate } from "react-router";
+import { useNavigate ,Link} from "react-router-dom";
 
 export default function Login() {
   const navigate = useNavigate();
@@ -62,6 +62,19 @@ export default function Login() {
         <Form.Label>Password</Form.Label>
         <Form.Control type="password" placeholder="Password" name="password" />
       </Form.Group>
+
+      {/* redirect to register page */}
+      <p className=" my-3 text-primary     ">
+        Dont have an account?{" "}
+        <Link
+
+        className="text-underline"
+          to={'/user/register'}
+        >
+          Register
+        </Link>
+      </p>
+
       <Button variant="primary" type="submit">
         Submit
       </Button>
