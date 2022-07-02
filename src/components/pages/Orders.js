@@ -1,15 +1,23 @@
-import axios from "axios";
 import { useEffect, useState } from "react";
+import { useNavigate, Link } from "react-router-dom";
+import axios from "axios";
 import moment from "moment";
-// import { useNavigate } from "react-router-dom";
 
 const Orders = () => {
-  //   const navigate = useNavigate();
   const [orders, setOrders] = useState([]);
 
+  const navigate = useNavigate();
   useEffect(() => {
     axios
-      .get(`${process.env.REACT_APP_SERVER_URL}/user/orders`)
+      .get(
+        `${process.env.REACT_APP_SERVER_URL}/user/orders`,
+
+        {
+          headers: {
+            Authorization: `${localStorage.getItem("token")}`,
+          },
+        }
+      )
       .then((res) => {
         setOrders(res.data);
       })
@@ -17,7 +25,18 @@ const Orders = () => {
   }, []);
 
   if (orders.length === 0) {
-    return <p>No orders yet</p>;
+    return (
+      <div className="container my-5 py-5">
+        <div className="row">
+          <div className="col-md-6">
+            <h3>No orders yet</h3>
+            <button className="btn btn-outlined-primary">
+              <Link to="/">Continue Shopping</Link>
+            </button>
+          </div>
+        </div>
+      </div>
+    );
   } else {
     return (
       <div className="container my-5">
@@ -26,8 +45,6 @@ const Orders = () => {
         <div className="orders__list">
           {orders.map((order) => (
             <div key={Math.random()} className="card p-4 my-4">
-          
-
               {/* products  */}
               {order.products.map((product) => (
                 <div className="my-4 p-4 round" key={Math.random()}>
@@ -48,15 +65,24 @@ const Orders = () => {
                         </span>
                       </div>
                       <div className="col-md-6 pt-2 centerTextOnMobile">
-                        <h5>{product.title}</h5>
+                        <h5
+                          onClick={() => {
+                            navigate(`/product/detail`, {
+                              state: { product, order },
+                            });
+                          }}
+                          style={{ cursor: "pointer" }}
+                        >
+                          {product.title}
+                        </h5>
                       </div>
                     </div>
                   </div>
                 </div>
               ))}
 
-                  {/* Header  */}
-                  <div className="d-flex justify-content-between p-4 flex-wrap">
+              {/* Header  */}
+              <div className="d-flex justify-content-between p-4 flex-wrap">
                 <div className="d-flex justify-content-center">
                   <h5> Date: </h5>
 
@@ -74,9 +100,9 @@ const Orders = () => {
                 <div className="d-flex justify-content-center">
                   <h5>Payment:</h5>
                   <p>
-                    {order.purchase.PaymentMethod === null
+                    {order.purchase.paymentMethod === null
                       ? "Pending"
-                      : order.purchase.PaymentMethod}
+                      : order.purchase.paymentMethod}
                   </p>
                 </div>
                 <div className="d-flex justify-content-center">
