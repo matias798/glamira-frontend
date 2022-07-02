@@ -20,16 +20,28 @@ const Register = () => {
 
     axios
       .post(`${process.env.REACT_APP_SERVER_URL}/user/register`, user)
-      .then((res) =>
+      .then((res) => {
+
+        // if user Name is already in use -> error
+        if (res.data === "User already exist") {
+          return Swal.fire({
+            title: "Error",
+            text: "User already exist",
+            icon: "error",
+            confirmButtonText: "OK",
+          });
+        }
         Swal.fire({
           title: "Success",
           text: "Register Successful",
           icon: "success",
           confirmButtonText: "OK",
         }).then(() => {
-          navigate("/user/login");
-        })
-      )
+          console.log(res.data);
+          localStorage.setItem("token", res.data.token);
+          navigate("/");
+        });
+      })
       .catch((err) => console.log(err));
   };
 
