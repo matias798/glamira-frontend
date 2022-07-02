@@ -1,4 +1,4 @@
-import { useLocation } from "react-router";
+import { useLocation } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import { useCart } from "react-use-cart";
 
@@ -6,7 +6,6 @@ import { useCart } from "react-use-cart";
 import ProductsSlider from "../sections/ProductsSlider";
 
 const ProductDetail = () => {
-  
   window.scrollTo(0, 0); //always go to top of page
   const { addItem } = useCart();
   const navigate = useNavigate();
@@ -15,8 +14,7 @@ const ProductDetail = () => {
   let products = useLocation().state.products;
 
   const addToCartHandler = (product) => {
-    addItem({...product,id:product._id});
-    console.log(product,1);
+    addItem({ ...product, id: product._id });
     navigate("/cart");
   };
 
@@ -44,12 +42,13 @@ const ProductDetail = () => {
             <div className="categories">
               <h6>
                 Category:{" "}
-                <span  
-                className="btn-link"
-                onClick={()=>{
-                  navigate(`/products/${product.category}`)
-                }}>
-                    {product.category}
+                <span
+                  className="btn-link"
+                  onClick={() => {
+                    navigate(`/products/${product.category}`);
+                  }}
+                >
+                  {product.category}
                 </span>
               </h6>
             </div>
@@ -68,11 +67,15 @@ const ProductDetail = () => {
         </div>
       </div>
       <div className="my-5 mt-4 pt-3">
-        <ProductsSlider
-          products={products}
-          navigate={navigate}
-          ProductSliderTitle={"You May Also Like"}
-        />
+        {products !== undefined && products.length > 0 ? (
+          <ProductsSlider
+            products={products}
+            navigate={navigate}
+            ProductSliderTitle={"You May Also Like"}
+          />
+        ) : (
+          ""
+        )}
       </div>
     </div>
   );
