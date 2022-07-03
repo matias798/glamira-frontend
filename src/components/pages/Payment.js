@@ -14,51 +14,37 @@ const Payment = () => {
     try {
       e.preventDefault();
 
-      // user token
-      let token = localStorage.getItem("token");
+      // create user obj
+      const user = {
+        email,
+        userName: name,
+        identification: dni,
+        fakeRegister: true,
+      };
 
-      // if user isnt logged in
-      if (token === null) {
-        // create user obj
-        const user = {
-          email,
-          userName: name,
-          identification: dni,
-          fakeRegister: true,
-        };
+      // Register user
+      let register = await axios.post(
+        `${process.env.REACT_APP_SERVER_URL}/user/register`,
+        user
+      );
 
-        // Register user
-        let register = await axios.post(
-          `${process.env.REACT_APP_SERVER_URL}/user/register`,
-          user
-        );
-
-        // check if user exist
-        if (register.data === "User already exist") {
-          return Swal.fire({
-            title: "User already exist",
-            text: "Please login with your credentials",
-            icon: "error",
-            confirmButtonText: "OK",
-          });
-        }
-
-        // Store user token
-        token = localStorage.setItem("token", register.data.token);
+      // if user Name is already in use -> error
+      if (register.data === "User already exist") {
+        return Swal.fire({
+          title: "User already exist",
+          text: "Please login with your credentials",
+          icon: "error",
+          confirmButtonText: "OK",
+        });
       }
 
-      // map items id to send to server
-      let itemsID = await items.map((item) => {
-        return item.id;
-      });
+      // Store user token
+      localStorage.setItem("token", register.data.token);
 
       // Data sent to the server
       let data = {
         total: `${cartTotal}`,
-        dni,
-        name,
-        email,
-        itemsID,
+        items,
         UserToken: localStorage.getItem("token"),
       };
 
@@ -67,7 +53,9 @@ const Payment = () => {
         `${process.env.REACT_APP_SERVER_URL}/payment`,
         data
       );
-      console.log(payment.data);
+
+   // redirect to website
+   window.location.href =payment.data;
     } catch (err) {
       console.log(err);
 
