@@ -2,7 +2,7 @@
 import axios from "axios";
 import Swal from "sweetalert2";
 import { Form, Button } from "react-bootstrap";
-import { useNavigate ,Link} from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 
 export default function Login() {
   const navigate = useNavigate();
@@ -20,13 +20,13 @@ export default function Login() {
       .post(`${process.env.REACT_APP_SERVER_URL}/user/login`, user)
       .then((res) => {
         if (res.status === 200) {
+          localStorage.setItem("token", res.data);
           Swal.fire({
             title: "Success",
             text: "Login Successful",
             icon: "success",
             confirmButtonText: "OK",
           }).then(() => {
-            localStorage.setItem("token", res.data.token);
             navigate("/");
           });
         }
@@ -66,11 +66,7 @@ export default function Login() {
       {/* redirect to register page */}
       <p className=" my-3 text-primary     ">
         Dont have an account?{" "}
-        <Link
-
-        className="text-underline"
-          to={'/user/register'}
-        >
+        <Link className="text-underline" to={"/user/register"}>
           Register
         </Link>
       </p>
