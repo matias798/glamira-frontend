@@ -18,10 +18,13 @@ Use the package manager (npm) or (yarn) to install.
 
 `npm install`  or  `yarn install`
 
-Change enviorment variable `REACT_APP_SERVER_URL` from .env file to a the server url.
-Remember that the server should be `https`.
+Change enviorment variable `REACT_APP_SERVER_URL` from .env.development file to a the server url.
+Run npm `npm run start:staging` to execute the client on the staging server.
 
-Run npm `npm start`  or  `yarn start`
+
+Change enviorment variable `REACT_APP_SERVER_URL` from .env.production file to a the server url.
+Remember that the server should be `https`.
+Run npm `npm run start:production` to execute the client on production.
 
 
 
