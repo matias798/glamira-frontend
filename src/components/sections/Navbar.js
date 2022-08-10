@@ -1,9 +1,8 @@
-// import react-icons
+// Modules
 import { BsBag } from "react-icons/bs";
 import { AiOutlineUser } from "react-icons/ai";
-
-// import react bootstrap
 import { Navbar, Nav, Container } from "react-bootstrap";
+import { NavLink } from "react-router-dom";
 
 const GlamiraNav = () => {
   const token = localStorage.getItem("token");
@@ -15,55 +14,55 @@ const GlamiraNav = () => {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
-            <Nav.Link
-              href="/products/men's clothing"
-              className="centerTextOnMobile"
+            <NavLink
+              to="/products/men's clothing"
+              className="centerTextOnMobile nav-item"
             >
               Men
-            </Nav.Link>
-            <Nav.Link
-              href="/products/women's clothing"
-              className="centerTextOnMobile"
+            </NavLink>
+            <NavLink
+              to="/products/women's clothing"
+              className="centerTextOnMobile nav-item"
             >
               Women
-            </Nav.Link>
-            <Nav.Link href="/products/jewelery" className="centerTextOnMobile">
+            </NavLink>
+            <NavLink to="/products/jewelery" className="centerTextOnMobile nav-item">
               Jewelry
-            </Nav.Link>
+            </NavLink>
           </Nav>
-          <div className="d-flex  centerTextOnMobile">
-            <Nav.Link
+          <div className="d-flex  centerTextOnMobile nav-item">
+            <NavLink
               className="dropdown-item shoppingCartNav centerOnMobile centerTextOnMobile"
-              href="/cart"
+              to="/cart"
             >
               {window.screen.width > 768 ? (
                 <BsBag className="me-4" size={25} />
               ) : (
                 "Cart"
               )}
-            </Nav.Link>
-            {token !== undefined ? (
-              <Nav.Link
+            </NavLink>
+            {token && token != null ? (
+              <NavLink
                 className="dropdown-item shoppingCartNav centerOnMobile centerTextOnMobile"
-                href="/user/profile/orders"
+                to="/user/profile/orders"
               >
                 {window.screen.width > 768 ? (
                   <AiOutlineUser size={25} />
                 ) : (
                   "Orders"
                 )}
-              </Nav.Link>
+              </NavLink>
             ) : (
-              <Nav.Link
+              <NavLink
                 className="dropdown-item shoppingCartNav centerOnMobile centerTextOnMobile"
-                href="user/login"
+                to="user/login"
               >
                 {window.screen.width > 768 ? (
                   <AiOutlineUser size={25} />
                 ) : (
                   "Orders"
                 )}
-              </Nav.Link>
+              </NavLink>
             )}
           </div>
         </Navbar.Collapse>
