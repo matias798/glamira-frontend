@@ -52,7 +52,7 @@ const Register = () => {
         registerHandler(e);
       }}
     >
-      <Form.Group className="mb-3" controlId="formBasicEmail">
+      <Form.Group className="mb-3" controlId="formUserName">
         <Form.Label>User Name</Form.Label>
         <Form.Control
           type="text"
@@ -65,7 +65,7 @@ const Register = () => {
         <Form.Label>Email address</Form.Label>
         <Form.Control type="email" placeholder="Enter email" name="email" />
       </Form.Group>
-      <Form.Group className="mb-3" controlId="formBasicEmail">
+      <Form.Group className="mb-3" controlId="formIdentification">
         <Form.Label>identification address</Form.Label>
         <Form.Control
           type="number"
@@ -77,10 +77,10 @@ const Register = () => {
       </Form.Group>
       <Form.Group className="mb-3" controlId="formBasicPassword">
         <Form.Label>Password</Form.Label>
-        <Form.Control type="password" placeholder="Password" name="password" />
+        <Form.Control type="password" placeholder="Password" name="password" autoComplete='off' required/>
       </Form.Group>
       <Button variant="primary" type="submit">
-        Submit
+        Register
       </Button>
     </Form>
   );
