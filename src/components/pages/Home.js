@@ -2,7 +2,7 @@
 import { useNavigate } from "react-router-dom";
 
 // components
-import HomeCarousel from "../sections/Carousel";
+import Banner from "../sections/Banner";
 import StayInTouch from "./../sections/StayInTouch.js";
 import ProductsSlider from "../sections/ProductsSlider";
 import Images from "../sections/Image";
@@ -24,7 +24,7 @@ const Home = () => {
     <>
       {products?.length > 0 && isLoading === false ? (
         <>
-          <HomeCarousel />
+          <Banner />
           <ProductsSlider
             products={products}
             navigate={navigate}

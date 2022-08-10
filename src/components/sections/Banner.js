@@ -1,8 +1,7 @@
-import Carousel from "react-bootstrap/Carousel";
 import { Link } from "react-router-dom";
 import mainImage from "./../../assets/images/slider-bg.jpg";
 
-const HomeCarousel = () => {
+const Banner = () => {
   return (
     <section className="slider_section ">
     <div className="slider_bg_box">
@@ -43,4 +42,4 @@ const HomeCarousel = () => {
  </section>
   );
 };
-export default HomeCarousel;
+export default Banner;
