@@ -1,6 +1,5 @@
 // Modules
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import { useEffect, useState } from "react";
 
 // Components
 import Navbar from "./components/sections/Navbar";
@@ -11,7 +10,6 @@ import Footer from "./components/sections/Footer";
 import Payment from "./components/pages/Payment";
 import ProductCategory from "./components/pages/ProductCategory";
 import Error from "./components/pages/Error";
-import Spinner from "./components/sections/Spinner";
 import ContactUs from "./components/pages/ContactUs";
 import Orders from "./components/pages/Orders";
 import Login from "./components/pages/Login";
@@ -19,19 +17,6 @@ import Register from "./components/pages/Register";
 import PrivateRoutes from "./components/pages/PrivateRoutes";
 
 function App() {
-  const [isLoading, setIsLoading] = useState(false);
-
-  useEffect(() => {
-    setIsLoading(true);
-    setTimeout(() => {
-      setIsLoading(false);
-    }, 800);
-  }, []);
-
-  // Return -> Spinner if pages are loading
-  if (isLoading) {
-    return <Spinner />;
-  }
 
   return (
     <div className="App">
