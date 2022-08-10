@@ -1,6 +1,5 @@
-import { useState, useEffect, useCallback } from "react";
+// modules
 import { useNavigate } from "react-router-dom";
-import axios from "axios";
 
 // components
 import HomeCarousel from "../sections/Carousel";
@@ -9,51 +8,37 @@ import ProductsSlider from "../sections/ProductsSlider";
 import Images from "../sections/Image";
 import AboutUs from "../sections/AboutUs";
 import Video from "../sections/Video";
+import Spinner from "./../sections/Spinner";
+
+// custom hook
+import { useFetchProducts } from "../../helpers/hooks/useFetchProducts";
 
 const Home = () => {
-  window.scrollTo(0, 0); //always go to top of page
-
-  let [products, setProducts] = useState([]);
-
-  const getproducts = useCallback(async () => {
-    try {
-      // axios with cross origin enabled
-      const res = await axios({
-        method: "get",
-        url: `${process.env.REACT_APP_SERVER_URL}/first-9-products`,
-        crossdomain: true,
-      });
-
-      setProducts(res.data);
-    } catch (err) {
-      console.log(err);
-    }
-  }, []); //logResult is memorized now.
-
-  useEffect(() => {
-    getproducts();
-  }, [getproducts]);
-
+  //always go to top of page
+  window.scrollTo(0, 0);
   const navigate = useNavigate();
-
+  const url = `${process.env.REACT_APP_SERVER_URL}/first-9-products`;
+  const { products, isLoading } = useFetchProducts(url);
+// reverse array of objects to show newest products first
   return (
     <>
-      <HomeCarousel />
-      <ProductsSlider
-        products={products}
-        navigate={navigate}
-        ProductSliderTitle="New Products"
-      />
-      <Images />
-      <Video />
-      <ProductsSlider
-        className="dontShowOnMobile"
-        products={products.reverse()}
-        navigate={navigate}
-        ProductSliderTitle="Collections"
-      />
-      <AboutUs />
-      <StayInTouch />
+      {products?.length > 0 && isLoading === false ? (
+        <>
+          <HomeCarousel />
+          <ProductsSlider
+            products={products}
+            navigate={navigate}
+            ProductSliderTitle="New Products"
+          />
+          <Images />
+          <Video />
+       
+          <AboutUs />
+          <StayInTouch />
+        </>
+      ) : (
+        <Spinner />
+      )}
     </>
   );
 };

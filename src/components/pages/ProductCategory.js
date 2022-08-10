@@ -1,34 +1,26 @@
-import axios from "axios";
+// Modules
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { BsSearch } from "react-icons/bs";
+
+// Components
+import Spinner from "./../sections/Spinner";
+
+// Custom Hooks
+import { useFetchProducts } from "../../helpers/hooks/useFetchProducts";
+
 const ProductCategory = () => {
-
-
   window.scrollTo(0, 0); //always go to top of page
   const navigate = useNavigate();
-  const [products, setProducts] = useState([]);
+
   const [filteredProducts, setfilteredProducts] = useState([]);
+  const { products, isLoading } = useFetchProducts(
+    `${process.env.REACT_APP_SERVER_URL}${window.location.pathname}`
+  );
 
   useEffect(() => {
-
-    try {
-
-      axios
-        .get(`${process.env.REACT_APP_SERVER_URL}${window.location.pathname}`)
-        .then((res) => {
-          setProducts(res.data);
-          setfilteredProducts(res.data);
-          //if data is empty
-          if (res.data.length === 0) {
-            // window.location.href = "/error"; //redirect to error page
-          }
-        });
-    } catch (error) {
-      console.log(error);
-      // window.location.href = "/error";
-    }
-  }, []);
+    setfilteredProducts(products);
+  }, [products]);
 
   const handleSearch = async (e) => {
     e.preventDefault();
@@ -42,6 +34,11 @@ const ProductCategory = () => {
     }
     return null;
   };
+
+  if (isLoading) {
+    return <Spinner />;
+  }
+
   return (
     <div className="container my-5 ">
       {/* search input */}

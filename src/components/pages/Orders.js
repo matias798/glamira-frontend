@@ -1,30 +1,24 @@
-import { useEffect, useState } from "react";
+// Modules
 import { useNavigate, Link } from "react-router-dom";
-import axios from "axios";
 import moment from "moment";
 
+// Components
+import Spinner from "../../components/sections/Spinner";
+
+// Custom hooks
+import { useFetchProducts } from "../../helpers/hooks/useFetchProducts";
+
 const Orders = () => {
-  const [orders, setOrders] = useState([]);
-
+  
   const navigate = useNavigate();
-  useEffect(() => {
-    axios
-      .get(
-        `${process.env.REACT_APP_SERVER_URL}/user/orders`,
 
-        {
-          headers: {
-            Authorization: `${localStorage.getItem("token")}`,
-          },
-        }
-      )
-      .then((res) => {
-        setOrders(res.data);
-      })
-      .catch((err) => console.log(err));
-  }, []);
+  const url = `${process.env.REACT_APP_SERVER_URL}/user/orders`;
+  const { products, isLoading } = useFetchProducts(url);
 
-  if (orders.length === 0) {
+  if (isLoading) {
+    return <Spinner />;
+  }
+  if (products.length === 0) {
     return (
       <div className="container my-5 py-5">
         <div className="row">
@@ -43,7 +37,7 @@ const Orders = () => {
         {/* title */}
         <h2 className="mb-5">Your Orders</h2>
         <div className="orders__list">
-          {orders.map((order) => (
+          {products.map((order) => (
             <div key={Math.random()} className="card p-4 my-4">
               {/* products  */}
               {order.products.map((product) => (
