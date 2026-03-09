@@ -3,7 +3,7 @@
 
 # Glamira Reactjs app
 
-# `Demo:` [Glamira ](https://glamira-frontend.web.app)
+# `Demo:` [Glamira ](https://agent-69aeeabcdc49a23cf773dc07--glamiradk.netlify.app/
   
   
   
