@@ -17,9 +17,11 @@ const Cart = () => {
     // tell the user that they need to login to checkout
     Swal.fire({
       icon: "info",
-      text: "Please login to checkout",
-      confirmButtonText: "OK",
-      confirmButtonColor: "#1a1a1a",
+      title: "Sign In Required",
+      text: "Please sign in to complete your purchase",
+      confirmButtonText: "Sign In",
+      showCancelButton: true,
+      cancelButtonText: "Continue Shopping",
     }).then((el) => {
       if (el.isConfirmed === true) {
         navigate("/user/login");
@@ -65,23 +67,23 @@ const Cart = () => {
 
         {isLoggedIn ? (
           <button
-            variant="contained"
-            className="btn btn-outline-primary"
+            className="btn btn-primary"
             onClick={(e) => {
               paymentHandler(e);
             }}
+            data-testid="purchase-btn"
           >
             Purchase
           </button>
         ) : (
           <button
-            variant="contained"
-            className="btn btn-outline-primary"
+            className="btn btn-primary"
             onClick={() => {
               continueHandler();
             }}
+            data-testid="continue-btn"
           >
-            continue
+            Checkout
           </button>
         )}
       </div>

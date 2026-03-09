@@ -28,3 +28,7 @@ yarn-error.log*
 .firebase/hosting.YnVpbGQ.cache
 
 firebase.json
+-e 
+# Environment files
+*.env
+*.env.*

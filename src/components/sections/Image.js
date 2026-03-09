@@ -3,92 +3,167 @@ import { Link } from "react-router-dom";
 const Image = () => {
   return (
     <div className="my-5 dontShowOnMobile container">
-      <h3 className="text-start ">Categories</h3>
+      <div className="text-center mb-5">
+        <p style={{
+          fontFamily: "'Montserrat', sans-serif",
+          fontSize: '11px',
+          letterSpacing: '3px',
+          textTransform: 'uppercase',
+          color: '#D4AF37',
+          marginBottom: '10px'
+        }}>
+          Explore
+        </p>
+        <h2 style={{
+          fontFamily: "'Playfair Display', serif",
+          fontSize: '2.2rem',
+          fontWeight: 500,
+          color: '#111'
+        }}>Our Collections</h2>
+      </div>
 
-      <div className="d-flex justify-content-center my-5 mt-2 py-5">
-        {/* Left Image */}
-        <Link to="/products/jewelery" className="me-4 containerimg">
-          {" "}
+      <div className="d-flex justify-content-center my-4">
+        {/* Left Image - Rings */}
+        <Link to="/products/rings" className="me-3 containerimg" style={{position: 'relative', overflow: 'hidden'}}>
           <img
-            src="https://images.unsplash.com/photo-1628926379972-9843ad139a8c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80"
-            alt="product"
-            className="img-fluid mx-auto d-block"
+            src="https://images.unsplash.com/photo-1605100804763-247f67b3557e?w=800&q=80"
+            alt="Rings Collection"
+            className="img-fluid"
             style={{
               height: "450px",
-              width: "800px",
-              borderRadius: "10px",
+              width: "500px",
+              objectFit: "cover"
             }}
           />
-          <div className="Left">
-            <h3 className="m-0 p-0" style={{ color: "#ffffff" }}>
-              Jewellery
-            </h3>
+          <div style={{
+            position: 'absolute',
+            bottom: '30px',
+            left: '30px',
+            color: '#fff'
+          }}>
+            <p style={{
+              fontFamily: "'Montserrat', sans-serif",
+              fontSize: '10px',
+              letterSpacing: '2px',
+              textTransform: 'uppercase',
+              marginBottom: '5px',
+              opacity: 0.8
+            }}>Collection</p>
+            <h3 style={{
+              fontFamily: "'Playfair Display', serif",
+              fontSize: '1.8rem',
+              fontWeight: 500,
+              margin: 0
+            }}>Rings</h3>
           </div>
         </Link>
-        {/* Right Images container */}
-        <div>
-          {/* Top Image*/}
-          <Link to="/products/all" className="containerimg">
-            {" "}
+        
+        {/* Right Side Container */}
+        <div className="d-flex flex-column">
+          {/* Top - Necklaces */}
+          <Link to="/products/necklaces" className="containerimg mb-3" style={{position: 'relative', overflow: 'hidden'}}>
             <img
-              src="https://images.unsplash.com/photo-1441984904996-e0b6ba687e04?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=520&q=80"
-              alt="product"
-              className="img-fluid mx-auto d-block"
+              src="https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?w=800&q=80"
+              alt="Necklaces Collection"
+              className="img-fluid"
               style={{
-                height: "250px",
-                width: "620px",
-                borderRadius: "10px",
+                height: "218px",
+                width: "600px",
+                objectFit: "cover"
               }}
             />
-            <div className="Center">
-              <h3 className="m-0 p-0" style={{ color: "#ffffff" }}>
-                All
-              </h3>
+            <div style={{
+              position: 'absolute',
+              bottom: '20px',
+              left: '25px',
+              color: '#fff'
+            }}>
+              <p style={{
+                fontFamily: "'Montserrat', sans-serif",
+                fontSize: '10px',
+                letterSpacing: '2px',
+                textTransform: 'uppercase',
+                marginBottom: '5px',
+                opacity: 0.8
+              }}>Collection</p>
+              <h3 style={{
+                fontFamily: "'Playfair Display', serif",
+                fontSize: '1.5rem',
+                fontWeight: 500,
+                margin: 0
+              }}>Necklaces</h3>
             </div>
           </Link>
-          {/* Bottom Container*/}
-          <div className="d-flex justify-content-center mt-4 ">
-            {/* Left  */}
-            <Link to="/products/men's clothing" className="containerimg">
-              {" "}
+          
+          {/* Bottom Row */}
+          <div className="d-flex">
+            {/* Earrings */}
+            <Link to="/products/earrings" className="containerimg me-3" style={{position: 'relative', overflow: 'hidden'}}>
               <img
-                src="https://images.unsplash.com/photo-1571455786673-9d9d6c194f90?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=250&q=80"
-                alt="product"
-                className="img-fluid mx-auto d-block "
+                src="https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?w=600&q=80"
+                alt="Earrings Collection"
+                className="img-fluid"
                 style={{
-                  height: "175px",
-                  width: "350px",
-                  borderRadius: "10px",
+                  height: "218px",
+                  width: "292px",
+                  objectFit: "cover"
                 }}
               />
-              <div className="Left">
-                <h3 className="m-0 p-0" style={{ color: "#ffffff" }}>
-                  Men
-                </h3>
+              <div style={{
+                position: 'absolute',
+                bottom: '20px',
+                left: '20px',
+                color: '#fff'
+              }}>
+                <p style={{
+                  fontFamily: "'Montserrat', sans-serif",
+                  fontSize: '10px',
+                  letterSpacing: '2px',
+                  textTransform: 'uppercase',
+                  marginBottom: '5px',
+                  opacity: 0.8
+                }}>Collection</p>
+                <h3 style={{
+                  fontFamily: "'Playfair Display', serif",
+                  fontSize: '1.3rem',
+                  fontWeight: 500,
+                  margin: 0
+                }}>Earrings</h3>
               </div>
             </Link>
 
-            {/* Right */}
-            <Link
-              to="/products/women's clothing"
-              className="containerimg"
-              style={{ marginLeft: "20px" }}
-            >
-              {" "}
+            {/* Bracelets */}
+            <Link to="/products/bracelets" className="containerimg" style={{position: 'relative', overflow: 'hidden'}}>
               <img
-                src="https://images.unsplash.com/photo-1608228088998-57828365d486?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=250&q=80"
-                alt="product"
-                className="img-fluid mx-auto d-block"
+                src="https://images.unsplash.com/photo-1611591437281-460bfbe1220a?w=600&q=80"
+                alt="Bracelets Collection"
+                className="img-fluid"
                 style={{
-                  height: "175px",
-                  width: "350px",
-                  borderRadius: "10px",
+                  height: "218px",
+                  width: "292px",
+                  objectFit: "cover"
                 }}
               />
-              <div className="Left" style={{ left: "30%" }}>
-                <h3 className="m-0 p-0" style={{ color: "#ffffff" }}>
-                  Women
-                </h3>
+              <div style={{
+                position: 'absolute',
+                bottom: '20px',
+                left: '20px',
+                color: '#fff'
+              }}>
+                <p style={{
+                  fontFamily: "'Montserrat', sans-serif",
+                  fontSize: '10px',
+                  letterSpacing: '2px',
+                  textTransform: 'uppercase',
+                  marginBottom: '5px',
+                  opacity: 0.8
+                }}>Collection</p>
+                <h3 style={{
+                  fontFamily: "'Playfair Display', serif",
+                  fontSize: '1.3rem',
+                  fontWeight: 500,
+                  margin: 0
+                }}>Bracelets</h3>
               </div>
             </Link>
           </div>

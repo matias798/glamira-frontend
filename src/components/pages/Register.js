@@ -25,17 +25,17 @@ const Register = () => {
         // if user Name is already in use -> error
         if (res.data === "User already exist") {
           return Swal.fire({
-            title: "Error",
-            text: "User already exist",
+            title: "Account Exists",
+            text: "An account with this username already exists",
             icon: "error",
-            confirmButtonText: "OK",
+            confirmButtonText: "Try Again",
           });
         }
         Swal.fire({
-          title: "Success",
-          text: "Register Successful",
+          title: "Welcome to Glamira",
+          text: "Your account has been created successfully",
           icon: "success",
-          confirmButtonText: "OK",
+          confirmButtonText: "Start Shopping",
         }).then(() => {
           console.log(res.data);
           localStorage.setItem("token", res.data.token);
@@ -79,8 +79,12 @@ const Register = () => {
         <Form.Label>Password</Form.Label>
         <Form.Control type="password" placeholder="Password" name="password" autoComplete='off' required/>
       </Form.Group>
-      <Button variant="primary" type="submit">
-        Register
+      <Button 
+        variant="primary" 
+        type="submit"
+        data-testid="register-btn"
+      >
+        Create Account
       </Button>
     </Form>
   );
