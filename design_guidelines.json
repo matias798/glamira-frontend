@@ -1,0 +1,156 @@
+{
+  "brand_identity": {
+    "name": "Glamira",
+    "tone": "Ethereal, Luxurious, Timeless, Sophisticated",
+    "theme_mode": "Light Luxury (Primary)",
+    "core_values": ["Exquisite Craftsmanship", "Timeless Elegance", "Personalized Luxury"]
+  },
+  "design_system": {
+    "colors": {
+      "primary": "#1A1A1A",
+      "secondary": "#D4AF37",
+      "background_main": "#FFFFFF",
+      "background_alt": "#F9F9F9",
+      "text_primary": "#111111",
+      "text_secondary": "#666666",
+      "accent_error": "#D32F2F",
+      "accent_success": "#388E3C",
+      "border_subtle": "#E5E5E5"
+    },
+    "typography": {
+      "font_family_heading": "'Playfair Display', serif",
+      "font_family_body": "'Montserrat', sans-serif",
+      "weights": {
+        "light": 300,
+        "regular": 400,
+        "medium": 500,
+        "bold": 700
+      },
+      "imports": [
+        "@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap');"
+      ]
+    },
+    "spacing": {
+      "base": "1rem",
+      "section_padding": "5rem 0",
+      "container_padding": "2rem"
+    },
+    "ui_elements": {
+      "border_radius": "0px",
+      "shadow_card": "0 10px 30px rgba(0,0,0,0.05)",
+      "shadow_hover": "0 20px 40px rgba(0,0,0,0.08)",
+      "transition_standard": "all 0.4s cubic-bezier(0.16, 1, 0.3, 1)"
+    }
+  },
+  "components": {
+    "ProductCard": {
+      "concept": "The Gallery Frame",
+      "style": {
+        "border": "none",
+        "background": "transparent",
+        "padding": "0",
+        "shadow": "none"
+      },
+      "image_container": {
+        "aspect_ratio": "4/5",
+        "background": "#F4F4F4",
+        "behavior": "overflow-hidden relative group"
+      },
+      "hover_effect": "Image distinct zoom (scale 1.05), Quick Add button slides up from bottom",
+      "typography": {
+        "title": "font-playfair text-lg mt-3 text-center text-primary tracking-wide",
+        "price": "font-montserrat text-sm text-secondary font-medium text-center"
+      }
+    },
+    "Buttons": {
+      "primary": {
+        "background": "#1A1A1A",
+        "text": "#FFFFFF",
+        "border": "1px solid #1A1A1A",
+        "hover_bg": "#FFFFFF",
+        "hover_text": "#1A1A1A",
+        "shape": "sharp (0px radius) or slightly rounded (2px)",
+        "transform": "uppercase tracking-widest text-xs py-3 px-8"
+      },
+      "secondary": {
+        "background": "transparent",
+        "text": "#1A1A1A",
+        "border": "1px solid #E5E5E5",
+        "hover_border": "#1A1A1A"
+      }
+    },
+    "Navbar": {
+      "style": "Minimalist, sticky top",
+      "background": "white/90 backdrop-blur-md",
+      "border_bottom": "1px solid rgba(0,0,0,0.05)",
+      "links": "uppercase text-xs tracking-widest hover:text-[#D4AF37]"
+    }
+  },
+  "assets": {
+    "hero_images": [
+      {
+        "url": "https://images.pexels.com/photos/33257666/pexels-photo-33257666.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+        "alt": "Elegant Jewelry Store Interior",
+        "category": "hero_main"
+      },
+      {
+        "url": "https://images.unsplash.com/photo-1762537132897-f6b577190e80?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NTYxODF8MHwxfHNlYXJjaHwyfHxlbGVnYW50JTIwZ29sZCUyMG5lY2tsYWNlJTIwbW9kZWwlMjBmYXNoaW9ufGVufDB8fHx8MTc3MzA1Njg3NHww&ixlib=rb-4.1.0&q=85",
+        "alt": "Model with Pearl Necklace",
+        "category": "hero_lifestyle"
+      }
+    ],
+    "product_images": [
+      {
+        "url": "https://images.unsplash.com/photo-1726507367666-08c5f025bdf6?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDQ2NDF8MHwxfHNlYXJjaHwyfHxsdXh1cnklMjBkaWFtb25kJTIwcmluZyUyMGpld2VscnklMjB3aGl0ZSUyMGJhY2tncm91bmR8ZW58MHx8fHwxNzczMDU2ODczfDA&ixlib=rb-4.1.0&q=85",
+        "alt": "Wedding Rings",
+        "category": "ring"
+      },
+      {
+        "url": "https://images.unsplash.com/photo-1605100804567-1ffe942b5cd6?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDQ2NDF8MHwxfHNlYXJjaHw0fHxsdXh1cnklMjBkaWFtb25kJTIwcmluZyUyMGpld2VscnklMjB3aGl0ZSUyMGJhY2tncm91bmR8ZW58MHx8fHwxNzczMDU2ODczfDA&ixlib=rb-4.1.0&q=85",
+        "alt": "Silver Diamond Heart Pendant",
+        "category": "necklace"
+      },
+      {
+        "url": "https://images.unsplash.com/photo-1713726306048-b750d71a8443?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NTYxOTJ8MHwxfHNlYXJjaHwzfHxsdXh1cnklMjBqZXdlbHJ5JTIwc3RvcmUlMjBpbnRlcmlvciUyMGVsZWdhbnR8ZW58MHx8fHwxNzczMDU2ODc0fDA&ixlib=rb-4.1.0&q=85",
+        "alt": "Ring on Display",
+        "category": "ring_display"
+      }
+    ],
+    "category_images": [
+      {
+        "url": "https://images.unsplash.com/photo-1704775991613-4379ee34ad26?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NTYxODF8MHwxfHNlYXJjaHwzfHxlbGVnYW50JTIwZ29sZCUyMG5lY2tsYWNlJTIwbW9kZWwlMjBmYXNoaW9ufGVufDB8fHx8MTc3MzA1Njg3NHww&ixlib=rb-4.1.0&q=85",
+        "alt": "Elegant Woman Green Dress",
+        "category": "collection_emerald"
+      },
+      {
+        "url": "https://images.unsplash.com/photo-1761429944147-d79101284789?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NTYxODF8MHwxfHNlYXJjaHw0fHxlbGVnYW50JTIwZ29sZCUyMG5lY2tsYWNlJTIwbW9kZWwlMjBmYXNoaW9ufGVufDB8fHx8MTc3MzA1Njg3NHww&ixlib=rb-4.1.0&q=85",
+        "alt": "Woman Black Blazer",
+        "category": "collection_modern"
+      }
+    ]
+  },
+  "implementation_guide": {
+    "scss_setup": {
+      "instructions": "Update App.scss to override Bootstrap variables BEFORE importing bootstrap if possible, or use !important for key luxury overrides.",
+      "critical_overrides": [
+        ".card { border: none !important; background: transparent !important; }",
+        ".btn-primary { background-color: #1A1A1A; border-color: #1A1A1A; border-radius: 0; }",
+        ".btn-primary:hover { background-color: #333; border-color: #333; }",
+        "a { text-decoration: none; color: inherit; }"
+      ]
+    },
+    "component_instructions": {
+      "ProductCard": "Create a new component 'ProductCard.js'. Do not use the default React-Bootstrap Card component for the visual part if it limits customization. Use raw divs with bootstrap utility classes + custom SCSS.",
+      "Swiper": "Ensure Swiper pagination dots are small and gold (#D4AF37). Navigation arrows should be thin and minimal."
+    }
+  },
+  "UNIVERSAL_GUIDELINES": {
+    "general": [
+      "Avoid 'Bootstrap Look': No default blue buttons, no rounded grey borders.",
+      "Use ample whitespace: Increase margins between sections (py-5 is minimum, aim for py-6 or py-7 equivalent).",
+      "Typography Hierarchy: Headings (Playfair) should be significantly larger than body text.",
+      "Images: Must use object-fit: cover to ensure consistency in grids.",
+      "Interactive: Add hover states to everything. Buttons should fill/invert. Images should zoom."
+    ]
+  }
+}
