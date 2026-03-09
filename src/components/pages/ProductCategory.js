@@ -14,8 +14,10 @@ const ProductCategory = () => {
   const navigate = useNavigate();
 
   const [filteredProducts, setfilteredProducts] = useState([]);
+  // FakeStore API uses /products/category/:categoryName format
+  const category = window.location.pathname.split('/products/')[1];
   const { products, isLoading } = useFetchProducts(
-    `${process.env.REACT_APP_SERVER_URL}${window.location.pathname}`
+    `${process.env.REACT_APP_SERVER_URL}/products/category/${category}`
   );
 
   useEffect(() => {

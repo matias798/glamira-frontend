@@ -14,7 +14,7 @@ const ProductDetail = () => {
   let products = useLocation().state.products;
 
   const addToCartHandler = (product) => {
-    addItem({ ...product, id: product._id });
+    addItem({ ...product, id: product.id });
     navigate("/cart");
   };
 

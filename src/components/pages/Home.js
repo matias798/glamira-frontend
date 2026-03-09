@@ -17,7 +17,7 @@ const Home = () => {
   //always go to top of page
   window.scrollTo(0, 0);
   const navigate = useNavigate();
-  const url = `${process.env.REACT_APP_SERVER_URL}/first-9-products`;
+  const url = `${process.env.REACT_APP_SERVER_URL}/products?limit=9`;
   const { products, isLoading } = useFetchProducts(url);
 // reverse array of objects to show newest products first
   return (
