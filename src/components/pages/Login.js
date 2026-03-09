@@ -22,10 +22,10 @@ export default function Login() {
         if (res.status === 200) {
           localStorage.setItem("token", res.data);
           Swal.fire({
-            title: "Success",
-            text: "Login Successful",
+            title: "Welcome Back",
+            text: "You have successfully signed in",
             icon: "success",
-            confirmButtonText: "OK",
+            confirmButtonText: "Continue Shopping",
           }).then(() => {
             navigate("/");
           });
@@ -34,10 +34,10 @@ export default function Login() {
       .catch((err) => {
         console.log(err);
         Swal.fire({
-          title: "Error",
-          text: "Incorrect user name or password",
+          title: "Unable to Sign In",
+          text: "Please check your credentials and try again",
           icon: "error",
-          confirmButtonText: "OK",
+          confirmButtonText: "Try Again",
         });
       });
   };
@@ -64,10 +64,10 @@ export default function Login() {
       </Form.Group>
 
       {/* redirect to register page */}
-      <p className=" my-3 text-primary     ">
-        Dont have an account?{" "}
-        <Link className="text-underline" to={"/user/register"}>
-          Register
+      <p className="my-3" style={{color: '#666'}}>
+        Don't have an account?{" "}
+        <Link style={{color: '#D4AF37', textDecoration: 'underline'}} to={"/user/register"}>
+          Create Account
         </Link>
       </p>
 

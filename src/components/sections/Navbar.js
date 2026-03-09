@@ -9,23 +9,37 @@ const GlamiraNav = () => {
 
   const navLinkStyle = {
     color: '#666',
-    margin: '0 25px',
     fontWeight: '500',
     fontSize: '11px',
     letterSpacing: '2px',
     textTransform: 'uppercase',
     textDecoration: 'none',
     transition: 'color 0.3s ease',
-    fontFamily: "'Montserrat', sans-serif"
+    fontFamily: "'Montserrat', sans-serif",
+    display: 'flex',
+    alignItems: 'center',
+    padding: '0 20px'
   };
 
   return (
-    <Navbar bg="light" expand="lg" style={{padding: '20px 0'}}>
+    <Navbar bg="light" expand="lg" className="py-3">
       <Container>
-        <Navbar.Brand href="/" style={{fontFamily: "'Playfair Display', serif", fontSize: '1.8rem', fontWeight: '500', letterSpacing: '3px'}}>Glamira</Navbar.Brand>
+        <Navbar.Brand 
+          href="/" 
+          style={{
+            fontFamily: "'Playfair Display', serif", 
+            fontSize: '1.8rem', 
+            fontWeight: '500', 
+            letterSpacing: '3px',
+            display: 'flex',
+            alignItems: 'center'
+          }}
+        >
+          Glamira
+        </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="me-auto">
+          <Nav className="me-auto align-items-center">
             <NavLink
               to="/products/rings"
               className="centerTextOnMobile nav-item"
@@ -55,38 +69,29 @@ const GlamiraNav = () => {
               Bracelets
             </NavLink>
           </Nav>
-          <div className="d-flex  centerTextOnMobile nav-item">
+          <div className="d-flex align-items-center">
             <NavLink
-              className="dropdown-item shoppingCartNav centerOnMobile centerTextOnMobile"
+              className="shoppingCartNav d-flex align-items-center"
               to="/cart"
+              style={{padding: '0 15px', color: '#666', transition: 'color 0.3s ease'}}
             >
-              {window.screen.width > 768 ? (
-                <BsBag className="me-4" size={25} />
-              ) : (
-                "Cart"
-              )}
+              <BsBag size={20} />
             </NavLink>
             {token && token != null ? (
               <NavLink
-                className="dropdown-item shoppingCartNav centerOnMobile centerTextOnMobile"
+                className="shoppingCartNav d-flex align-items-center"
                 to="/user/profile/orders"
+                style={{padding: '0 10px', color: '#666', transition: 'color 0.3s ease'}}
               >
-                {window.screen.width > 768 ? (
-                  <AiOutlineUser size={25} />
-                ) : (
-                  "Orders"
-                )}
+                <AiOutlineUser size={22} />
               </NavLink>
             ) : (
               <NavLink
-                className="dropdown-item shoppingCartNav centerOnMobile centerTextOnMobile"
+                className="shoppingCartNav d-flex align-items-center"
                 to="user/login"
+                style={{padding: '0 10px', color: '#666', transition: 'color 0.3s ease'}}
               >
-                {window.screen.width > 768 ? (
-                  <AiOutlineUser size={25} />
-                ) : (
-                  "Orders"
-                )}
+                <AiOutlineUser size={22} />
               </NavLink>
             )}
           </div>

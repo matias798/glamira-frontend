@@ -533,3 +533,118 @@ hr {
     font-size: 2.5rem;
   }
 }
+
+
+// ===== LUXURY SWEETALERT2 STYLING =====
+.swal2-popup {
+  font-family: 'Montserrat', sans-serif !important;
+  border-radius: 0 !important;
+  padding: 40px 30px !important;
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15) !important;
+}
+
+.swal2-title {
+  font-family: 'Playfair Display', serif !important;
+  font-size: 1.5rem !important;
+  font-weight: 500 !important;
+  color: #111 !important;
+  letter-spacing: 0.5px !important;
+}
+
+.swal2-html-container {
+  font-family: 'Montserrat', sans-serif !important;
+  font-size: 0.9rem !important;
+  color: #666 !important;
+  line-height: 1.6 !important;
+}
+
+.swal2-confirm {
+  font-family: 'Montserrat', sans-serif !important;
+  font-size: 11px !important;
+  font-weight: 500 !important;
+  letter-spacing: 2px !important;
+  text-transform: uppercase !important;
+  padding: 14px 35px !important;
+  border-radius: 0 !important;
+  background-color: #1A1A1A !important;
+  border: 1px solid #1A1A1A !important;
+  transition: all 0.3s ease !important;
+  
+  &:hover {
+    background-color: #333 !important;
+  }
+  
+  &:focus {
+    box-shadow: none !important;
+  }
+}
+
+.swal2-cancel {
+  font-family: 'Montserrat', sans-serif !important;
+  font-size: 11px !important;
+  font-weight: 500 !important;
+  letter-spacing: 2px !important;
+  text-transform: uppercase !important;
+  padding: 14px 35px !important;
+  border-radius: 0 !important;
+  background-color: transparent !important;
+  color: #1A1A1A !important;
+  border: 1px solid #E5E5E5 !important;
+  transition: all 0.3s ease !important;
+  
+  &:hover {
+    background-color: #F9F9F9 !important;
+    border-color: #1A1A1A !important;
+  }
+  
+  &:focus {
+    box-shadow: none !important;
+  }
+}
+
+.swal2-icon {
+  border-color: #D4AF37 !important;
+  color: #D4AF37 !important;
+  
+  &.swal2-success {
+    border-color: #D4AF37 !important;
+    
+    .swal2-success-ring {
+      border-color: rgba(212, 175, 55, 0.3) !important;
+    }
+    
+    [class^='swal2-success-line'] {
+      background-color: #D4AF37 !important;
+    }
+  }
+  
+  &.swal2-error {
+    border-color: #c0392b !important;
+    color: #c0392b !important;
+    
+    .swal2-x-mark-line-left,
+    .swal2-x-mark-line-right {
+      background-color: #c0392b !important;
+    }
+  }
+  
+  &.swal2-info {
+    border-color: #D4AF37 !important;
+    color: #D4AF37 !important;
+  }
+  
+  &.swal2-question {
+    border-color: #D4AF37 !important;
+    color: #D4AF37 !important;
+  }
+}
+
+.swal2-actions {
+  margin-top: 25px !important;
+}
+
+// Backdrop styling
+.swal2-container {
+  backdrop-filter: blur(3px);
+}
+
