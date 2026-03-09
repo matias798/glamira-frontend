@@ -17,7 +17,8 @@ const Home = () => {
   //always go to top of page
   window.scrollTo(0, 0);
   const navigate = useNavigate();
-  const url = `${process.env.REACT_APP_SERVER_URL}/products?limit=9`;
+  // Focus on jewelry products for this jewelry website
+  const url = `${process.env.REACT_APP_SERVER_URL}/products/category/jewelery`;
   const { products, isLoading } = useFetchProducts(url);
 // reverse array of objects to show newest products first
   return (

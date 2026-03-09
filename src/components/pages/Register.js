@@ -79,7 +79,19 @@ const Register = () => {
         <Form.Label>Password</Form.Label>
         <Form.Control type="password" placeholder="Password" name="password" autoComplete='off' required/>
       </Form.Group>
-      <Button variant="primary" type="submit">
+      <Button 
+        variant="primary" 
+        type="submit"
+        style={{
+          backgroundColor: '#f7444e',
+          borderColor: '#f7444e',
+          padding: '12px 40px',
+          borderRadius: '0',
+          fontWeight: '500',
+          letterSpacing: '1px',
+          textTransform: 'uppercase'
+        }}
+      >
         Register
       </Button>
     </Form>

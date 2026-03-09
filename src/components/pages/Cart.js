@@ -65,23 +65,39 @@ const Cart = () => {
 
         {isLoggedIn ? (
           <button
-            variant="contained"
-            className="btn btn-outline-primary"
+            className="btn btn-primary"
             onClick={(e) => {
               paymentHandler(e);
+            }}
+            style={{
+              backgroundColor: '#f7444e',
+              borderColor: '#f7444e',
+              padding: '12px 40px',
+              borderRadius: '0',
+              fontWeight: '500',
+              letterSpacing: '1px',
+              textTransform: 'uppercase'
             }}
           >
             Purchase
           </button>
         ) : (
           <button
-            variant="contained"
-            className="btn btn-outline-primary"
+            className="btn btn-primary"
             onClick={() => {
               continueHandler();
             }}
+            style={{
+              backgroundColor: '#f7444e',
+              borderColor: '#f7444e',
+              padding: '12px 40px',
+              borderRadius: '0',
+              fontWeight: '500',
+              letterSpacing: '1px',
+              textTransform: 'uppercase'
+            }}
           >
-            continue
+            Continue
           </button>
         )}
       </div>

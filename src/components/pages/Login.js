@@ -71,7 +71,19 @@ export default function Login() {
         </Link>
       </p>
 
-      <Button variant="primary" type="submit">
+      <Button 
+        variant="primary" 
+        type="submit"
+        style={{
+          backgroundColor: '#f7444e',
+          borderColor: '#f7444e',
+          padding: '12px 40px',
+          borderRadius: '0',
+          fontWeight: '500',
+          letterSpacing: '1px',
+          textTransform: 'uppercase'
+        }}
+      >
         Login
       </Button>
     </Form>

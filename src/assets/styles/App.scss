@@ -38,6 +38,15 @@ body {
 // Navbar
 .nav-item {
   text-decoration: none !important;
+  color: #5a5a5a !important;
+  margin: 0 15px !important;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  transition: color 0.3s ease;
+  
+  &:hover {
+    color: $primary1 !important;
+  }
 }
 .containerimg {
   position: relative;
@@ -176,6 +185,53 @@ body {
 }
 
 /* /product detail */
+
+/* Elegant Button Styling */
+.btn-primary {
+  background-color: $primary1 !important;
+  border-color: $primary1 !important;
+  color: $white !important;
+  padding: 12px 30px !important;
+  border-radius: 0 !important;
+  font-weight: 500;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+  
+  &:hover {
+    background-color: transparent !important;
+    color: $primary1 !important;
+    border-color: $primary1 !important;
+  }
+  
+  &:focus, &:active {
+    background-color: darken($primary1, 10%) !important;
+    border-color: darken($primary1, 10%) !important;
+    box-shadow: none !important;
+  }
+}
+
+/* Footer Styling */
+.footer {
+  p {
+    color: #b0b0b0 !important;
+    font-size: 14px;
+  }
+  
+  .widget-title {
+    font-family: didot;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+  
+  .footer-copyright {
+    color: #888 !important;
+    font-size: 13px;
+    padding: 20px 0;
+    border-top: 1px solid #3a3a3a;
+  }
+}
 
 /* Carrousel */
 
