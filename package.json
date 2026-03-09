@@ -2,6 +2,10 @@
   "name": "glamira",
   "version": "0.1.0",
   "private": true,
+  "engines": {
+    "node": ">=25.8.0",
+    "npm": ">=11.11.0"
+  },
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.4",
     "@testing-library/react": "^13.3.0",
