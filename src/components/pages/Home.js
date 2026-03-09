@@ -1,5 +1,6 @@
 // modules
 import { useNavigate } from "react-router-dom";
+import { useState, useEffect } from "react";
 
 // components
 import Banner from "../sections/Banner";
@@ -8,18 +9,22 @@ import ProductsSlider from "../sections/ProductsSlider";
 import Images from "../sections/Image";
 import AboutUs from "../sections/AboutUs";
 import Video from "../sections/Video";
-import Spinner from "./../sections/Spinner";
 
-// custom hook
-import { useFetchProducts } from "../../helpers/hooks/useFetchProducts";
+// Local jewelry data
+import { jewelryProducts } from "../../data/jewelryProducts";
 
 const Home = () => {
   //always go to top of page
   window.scrollTo(0, 0);
   const navigate = useNavigate();
-  // Focus on jewelry products for this jewelry website
-  const url = `${process.env.REACT_APP_SERVER_URL}/products/category/jewelery`;
-  const { products, isLoading } = useFetchProducts(url);
+  const [products, setProducts] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    // Use local jewelry data instead of API
+    setProducts(jewelryProducts);
+    setIsLoading(false);
+  }, []);
 // reverse array of objects to show newest products first
   return (
     <>
@@ -29,7 +34,7 @@ const Home = () => {
           <ProductsSlider
             products={products}
             navigate={navigate}
-            ProductSliderTitle="New Products"
+            ProductSliderTitle="New Arrivals"
           />
           <Images />
           <Video />
@@ -38,7 +43,13 @@ const Home = () => {
           <StayInTouch />
         </>
       ) : (
-        <Spinner />
+        <div className="d-flex justify-content-center align-items-center" style={{minHeight: '60vh'}}>
+          <div className="text-center">
+            <div className="spinner-border" role="status" style={{color: '#D4AF37'}}>
+              <span className="visually-hidden">Loading...</span>
+            </div>
+          </div>
+        </div>
       )}
     </>
   );

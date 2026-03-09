@@ -74,17 +74,9 @@ export default function Login() {
       <Button 
         variant="primary" 
         type="submit"
-        style={{
-          backgroundColor: '#f7444e',
-          borderColor: '#f7444e',
-          padding: '12px 40px',
-          borderRadius: '0',
-          fontWeight: '500',
-          letterSpacing: '1px',
-          textTransform: 'uppercase'
-        }}
+        data-testid="login-btn"
       >
-        Login
+        Sign In
       </Button>
     </Form>
   );

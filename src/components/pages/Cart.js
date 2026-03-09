@@ -69,15 +69,7 @@ const Cart = () => {
             onClick={(e) => {
               paymentHandler(e);
             }}
-            style={{
-              backgroundColor: '#f7444e',
-              borderColor: '#f7444e',
-              padding: '12px 40px',
-              borderRadius: '0',
-              fontWeight: '500',
-              letterSpacing: '1px',
-              textTransform: 'uppercase'
-            }}
+            data-testid="purchase-btn"
           >
             Purchase
           </button>
@@ -87,17 +79,9 @@ const Cart = () => {
             onClick={() => {
               continueHandler();
             }}
-            style={{
-              backgroundColor: '#f7444e',
-              borderColor: '#f7444e',
-              padding: '12px 40px',
-              borderRadius: '0',
-              fontWeight: '500',
-              letterSpacing: '1px',
-              textTransform: 'uppercase'
-            }}
+            data-testid="continue-btn"
           >
-            Continue
+            Checkout
           </button>
         )}
       </div>

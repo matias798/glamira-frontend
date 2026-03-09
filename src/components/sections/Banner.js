@@ -3,41 +3,38 @@ import mainImage from "./../../assets/images/slider-bg.jpg";
 
 const Banner = () => {
   return (
-    <section className="slider_section ">
+    <section className="slider_section">
     <div className="slider_bg_box">
-       <img src={mainImage} alt=""/>
+       <img src={mainImage} alt="Glamira Jewelry"/>
     </div>
     <div id="customCarousel1" className="carousel slide" data-ride="carousel">
        <div className="carousel-inner">
           <div className="carousel-item active">
-             <div className="container ">
+             <div className="container">
                 <div className="row">
-                   <div className="col-md-7 col-lg-6 ">
+                   <div className="col-md-7 col-lg-6">
                       <div className="detail-box">
                          <h1>
                             <span>
-                            Sale 20% Off
+                            Timeless
                             </span>
                             <br/>
-                            On Everything
+                            Elegance
                          </h1>
                          <p>
-                            Explicabo esse amet tempora quibusdam laudantium, laborum eaque magnam fugiat hic? Esse dicta aliquid error repudiandae earum suscipit fugiat molestias, veniam, vel architecto veritatis delectus repellat modi impedit sequi.
+                            Discover exquisite jewelry crafted with precision and passion. Each piece tells a story of sophistication, designed to celebrate life's most precious moments.
                          </p>
-                         <div >
-                            <Link to="/products/jewelery" className="btn1">
-                            Shop Now
+                         <div>
+                            <Link to="/products/rings" className="btn1">
+                            Explore Collection
                             </Link>
-                            
                          </div>
                       </div>
                    </div>
                 </div>
              </div>
           </div>
-    
        </div>
-    
     </div>
  </section>
   );
