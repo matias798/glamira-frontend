@@ -3,8 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "engines": {
-    "node": ">=25.8.0",
-    "npm": ">=11.11.0"
+    "node": ">=18.0.0",
+    "npm": ">=8.0.0"
   },
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.4",
@@ -26,6 +26,7 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
+    "start": "env-cmd -f .env.development react-scripts start",
     "start:staging": "env-cmd -f .env.development react-scripts start",
     "start:production": "env-cmd -f .env.production react-scripts start",
     "build": "react-scripts build",
