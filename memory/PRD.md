@@ -1,51 +1,69 @@
 # Glamira Jewelry Website PRD
 
 ## Original Problem Statement
-Fix the jewelry demo website to work without a backend and resolve multiple CSS/styling issues.
+Fix the jewelry demo website to work without a backend, use jewelry-specific API/data, and improve UX/UI especially on product cards.
 
 ## What Was Implemented (Jan 2026)
 
 ### Phase 1: API Migration
-- Migrated from broken custom backend to FakeStore API (https://fakestoreapi.com)
-- Updated endpoints: `/first-9-products` → `/products/category/jewelery`
-- Updated category routes to use FakeStore format
+- Created local luxury jewelry data (12 products) in `/app/src/data/jewelryProducts.js`
+- Categories: Rings (4), Necklaces (3), Earrings (3), Bracelets (2)
+- High-quality Unsplash jewelry images
 
-### Phase 2: UI/UX Fixes
-1. **Jewelry Focus**: Home page now shows only jewelry products instead of mixed clothing
-2. **Button Colors**: Changed all blue buttons to elegant coral (#f7444e)
-   - Add to Cart, Login, Register, Subscribe, Explore Collection
-3. **Navbar Styling**: Added proper spacing (20px) and elegant gray color for nav links
-4. **Video Section**: Replaced broken Cloudinary video with elegant promo section
-5. **Footer**: Fixed text visibility on dark background
+### Phase 2: Luxury UI/UX Redesign
+**Design System - "Ethereal Luxury":**
+- Typography: Playfair Display (headings) + Montserrat (body)
+- Colors: Black (#1A1A1A), Gold accents (#D4AF37), Clean white backgrounds
+- All Bootstrap defaults overridden for luxury feel
+
+**Product Cards (Gallery Frame concept):**
+- 4:5 aspect ratio images
+- Hover effect: image zoom (1.05) + Quick View overlay slides up
+- Elegant typography with formatted pricing
+
+**Navigation:**
+- Minimalist navbar with jewelry categories: Rings, Necklaces, Earrings, Bracelets
+- Uppercase text with letter-spacing
+
+**Hero Banner:**
+- "Timeless Elegance" luxury messaging
+- Black CTA buttons with hover inversion
+
+### Phase 3: Component Updates
+- Created `/app/src/components/sections/ProductCard.js` - Luxury card component
+- Updated ProductsSlider with new card design
+- Updated Collections section with 4 jewelry categories
+- Updated promo section "Crafted With Passion"
+- All buttons now use luxury black styling
 
 ## Tech Stack
 - React 18
-- FakeStore API (public jewelry API)
-- Bootstrap 5 + SCSS
+- Local jewelry data (no external API dependency)
+- Bootstrap 5 + Custom SCSS
+- Swiper.js for product slider
 - react-use-cart for cart management
 
 ## Core Features Working
-- Product browsing (Men, Women, Jewelry categories)
-- Product detail view
-- Add to cart functionality
-- Shopping cart management
-- Login/Register forms (mock - no backend auth)
+- Product browsing by category
+- Product detail with Add to Cart
+- Shopping cart with total calculation
+- Search within categories
+- Responsive design
 
-## Files Modified
-- `/app/.env.development` - API URL
-- `/app/.env.production` - API URL
-- `/app/src/components/pages/Home.js` - Jewelry-only products
-- `/app/src/components/pages/ProductCategory.js` - FakeStore API format
-- `/app/src/components/sections/Navbar.js` - Styling improvements
-- `/app/src/components/sections/Video.js` - Promo section replacement
-- `/app/src/components/pages/Login.js` - Button styling
-- `/app/src/components/pages/Register.js` - Button styling
-- `/app/src/components/pages/Cart.js` - Button styling
-- `/app/src/assets/styles/App.scss` - Global button and footer styles
+## Files Modified/Created
+- `/app/src/data/jewelryProducts.js` - NEW: Local jewelry data
+- `/app/src/components/sections/ProductCard.js` - NEW: Luxury card component
+- `/app/src/assets/styles/App.scss` - Complete luxury redesign
+- `/app/src/components/pages/Home.js` - Uses local data
+- `/app/src/components/pages/ProductCategory.js` - Updated for local data
+- `/app/src/components/sections/Navbar.js` - Jewelry categories
+- `/app/src/components/sections/Image.js` - Collections showcase
+- `/app/src/components/sections/ProductsSlider.js` - New card design
+- `/app/src/components/sections/Video.js` - Promo section
 
 ## Backlog / Future Enhancements
-- P1: Add product filtering by price
-- P1: Implement actual authentication backend
-- P2: Add wishlist functionality
-- P2: Product ratings display (data available in API)
-- P3: Checkout/payment integration
+- P1: Wishlist functionality
+- P1: Product image gallery on detail page
+- P2: Sort/filter by price
+- P2: Size selector for rings
+- P3: Customer reviews section
